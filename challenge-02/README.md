@@ -12,7 +12,7 @@ function sum(x,y) {
 var result = sum(5,3) + 5;
 
 // Qual o valor atualizado dessa variável?
-result //13
+//13
 // Declare uma nova variável, sem valor.
 var result;
 
