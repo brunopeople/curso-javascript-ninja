@@ -53,15 +53,14 @@ function newFunction (x,y,z) {
 newFunction(3,4)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-/*
-"Preencha todos os valores corretamente!"
-*/
+//"Preencha todos os valores corretamente!"
+
 
 // Agora invoque novamente a função criada acima, mas passando todos os três argumentos necessários.
 newFunction(3,4,5)
 
 // Qual o resultado da invocação acima? (Use comentários para mostrar o valor retornado).
-62
+//62
 
 /*
 Crie uma função com as seguintes características:
@@ -75,13 +74,17 @@ Crie uma função com as seguintes características:
 function functionDois (x,y,z) {
 	if(x !== undefined && y === undefined && z === undefined) {
 		return x;
-	} else if (x !== undefined && y !== undefined && z === undefined) {
+	} 
+  else if (x !== undefined && y !== undefined && z === undefined) {
 		return x + y;
-	} else if (x !== undefined && y !== undefined && z !== undefined) {
+	} 
+  else if (x !== undefined && y !== undefined && z !== undefined) {
 		return (x + y) / z;		
-	} else if(x === undefined && y === undefined && z === undefined) {
+	} 
+  else if(x === undefined && y === undefined && z === undefined) {
 		return false;
-	} else {
+	} 
+  else {
 		return null;
 	}
 }
