@@ -190,11 +190,11 @@ pessoa.apresentacao = function() {
     artigo = 'a';
   }
 
-  if (pessoa.idade <= 1 ) {
+  if (pessoa.idade === 1 ) {
     idadePlural = 'ano';
   }
 
-  if (pessoa.caminhouQuantosMetros <= 1 ) {
+  if (pessoa.caminhouQuantosMetros === 1 ) {
     medidaPlural = 'metro';
   }
 
