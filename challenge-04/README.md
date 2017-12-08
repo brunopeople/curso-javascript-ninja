@@ -115,7 +115,7 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(pessoas) {
-  var assentosLivres = carro.quantidadePessoas < carro.assentos ? pessoas - carro.assentos : 0;
+  var assentosLivres = carro.quantidadePessoas < carro.assentos ? carro.assentos - carro.quantidadePessoas : 0;
   var pessoasPlural = pessoas === 1 ? 'pessoa' : 'pessoas';
   
   if(!assentosLivres) {
@@ -139,13 +139,13 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-carro.obterCor() // "prata"
+carro.obterCor(); // "prata"
 
 // Mude a cor do carro para vermelho.
 carro.mudarCor('preto');
 
 // E agora, qual a cor do carro?
-carro.obterCor() // "preto"
+carro.obterCor(); // "preto"
 
 // Mude a cor do carro para verde musgo.
 carro.mudarCor('verde musgo');
@@ -160,17 +160,17 @@ carro.obterMarcaModelo(); // "Esse carro é um Volkswagen Gol"
 carro.adicionarPessoas(2); // "Já temos 2 pessoas no carro!"
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoas(4); // "Só cabem mais 3 pessoas!"
 
 // Faça o carro encher.
-?
+carro.adicionarPessoas(3); // "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-?
+carro.quantidadePessoas = carro.quantidadePessoas - 4; // 1
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10); // "Só cabem mais 4 pessoas!"
 
 // Quantas pessoas temos no carro?
-?
+carro.quantidadePessoas; // 1
 ```
