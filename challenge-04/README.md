@@ -121,14 +121,15 @@ carro.adicionarPessoas = function(pessoas) {
   if(!assentosLivres) {
     return 'O carro já está lotado!';   
   }
-  else if(pessoas > assentosLivres) {
+  
+  if(pessoas > assentosLivres) {
     pessoasPlural = assentosLivres === 1 ? 'pessoa' : 'pessoas';
     return 'Só cabem mais ' + assentosLivres + ' ' + pessoasPlural + '!';
   } 
-  else {
-    carro.quantidadePessoas += pessoas;
-    return 'Já temos ' + carro.quantidadePessoas + ' ' + pessoasPlural + ' no carro!';
-  }
+  
+  carro.quantidadePessoas += pessoas;
+  return 'Já temos ' + carro.quantidadePessoas + ' ' + pessoasPlural + ' no carro!';
+  
 };
 
 /*
