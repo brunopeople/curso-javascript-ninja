@@ -6,6 +6,7 @@ Declare uma variável chamada `isTruthy`, e atribua a ela uma função que receb
 um único parâmetro como argumento. Essa função deve retornar `true` se o
 equivalente booleano para o valor passado no argumento for `true`, ou `false`
 para o contrário.
+Corrigido junto ao video
 */
 var isTruthy = function(param) {
   return !!param;
@@ -115,21 +116,20 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 citado acima, no lugar de "pessoas".
 */
 carro.adicionarPessoas = function(pessoas) {
-  var assentosLivres = carro.quantidadePessoas < carro.assentos ? carro.assentos - carro.quantidadePessoas : 0;
-  var pessoasPlural = pessoas === 1 ? 'pessoa' : 'pessoas';
+  var totalPessoas = carro.quantidadePessoas + pessoas;
+  var quantasPessoasCabem = carro.assentos - carro.quantidadePesssoas;
+  var pluralOuSingular = quantasPessoasCabem === 1 ? ' pessoa' : ' pessoas';
   
-  if(!assentosLivres) {
+  if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos ) {
     return 'O carro já está lotado!';   
   }
   
-  if(pessoas > assentosLivres) {
-    pessoasPlural = assentosLivres === 1 ? ' pessoa' : ' pessoas';
-    return 'Só cabem mais ' + assentosLivres + pessoasPlural + '!';
+  if(totalPessoas > carro.assentos) {
+    return 'Só cabem mais ' + quantasPessoasCabem + pluralOuSingular + '!';
   } 
   
   carro.quantidadePessoas += pessoas;
-  return 'Já temos ' + carro.quantidadePessoas + ' ' + pessoasPlural + ' no carro!';
-  
+  return 'Já temos ' + carro.quantidadePessoas + ' no carro!';
 };
 
 /*
@@ -167,7 +167,7 @@ carro.adicionarPessoas(4); // "Só cabem mais 3 pessoas!"
 carro.adicionarPessoas(3); // "Já temos 5 pessoas no carro!"
 
 // Tire 4 pessoas do carro.
-carro.quantidadePessoas = carro.quantidadePessoas - 4; // 1
+carro.adicionarPessoas(-4); // "Já temos 1 no carro!"
 
 // Adicione 10 pessoas no carro.
 carro.adicionarPessoas(10); // "Só cabem mais 4 pessoas!"
