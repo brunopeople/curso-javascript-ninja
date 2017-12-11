@@ -123,8 +123,8 @@ carro.adicionarPessoas = function(pessoas) {
   }
   
   if(pessoas > assentosLivres) {
-    pessoasPlural = assentosLivres === 1 ? 'pessoa' : 'pessoas';
-    return 'Só cabem mais ' + assentosLivres + ' ' + pessoasPlural + '!';
+    pessoasPlural = assentosLivres === 1 ? ' pessoa' : ' pessoas';
+    return 'Só cabem mais ' + assentosLivres + pessoasPlural + '!';
   } 
   
   carro.quantidadePessoas += pessoas;
