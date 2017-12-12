@@ -57,7 +57,7 @@ function book (nameBook) {
 			editora: 'Intriseca'
 		},
 		1984: {
-			quantidadePagina': 416,
+			quantidadePagina: 416,
 			autor: 'Orwell, Geroge',
 			editora: 'Compainha das Letras'
 		},
