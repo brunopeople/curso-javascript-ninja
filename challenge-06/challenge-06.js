@@ -36,7 +36,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
 */
 function showTeamPosition (position) {
   var index = position - 1;
-  if (index <= 5) {
+  if (index < 0 || index > 5) {
     return 'O time que está em ' + position + 'º lugar é o ' + teams[index] + '.';
   }
   
