@@ -56,6 +56,7 @@ showTeamPosition(7); // "Não temos a informação do time que está nessa posi�
 Mostre os números de 20 a 30 no console (inclusive o 30), usando a estrutura de
 repetição "while".
 */
+var num = 20;
 while(num <= 30) {
 	console.log(num++);
 }
