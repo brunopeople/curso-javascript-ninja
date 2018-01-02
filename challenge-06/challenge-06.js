@@ -86,40 +86,37 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(nomeCor) {
-  var hexColors = {
-    'red': '#ff0000',
-    'green': '#00ff00',
-    'blue': '#0000ff',
-    'yellow': '#00ff00',
-    'brown': '#5d3f0f'  
-  };
   
   switch(nomeCor) {
     case 'red':
-      return 'O hexadecimal para a cor ' + nomeCor + ' é ' + hexColors.red + '.';
-    break;
+      var hexColor = '#ff0000';
+      break;
     case 'green':
-      return 'O hexadecimal para a cor ' + nomeCor + ' é ' + hexColors.green + '.';
-    break;
+      var hexColor = '#00ff00';
+      break;
     case 'blue':
-      return 'O hexadecimal para a cor ' + nomeCor + ' é ' + hexColors.blue + '.';
-    break;
-      case 'yellow':
-      return 'O hexadecimal para a cor ' + nomeCor + ' é ' + hexColors.yellow + '.';
-    break;
-    case 'brown':
-      return 'O hexadecimal para a cor ' + nomeCor + ' é ' + hexColors.brown + '.';
-    break;
+      var hexColor = '#0000ff';
+      break;
+    case 'black':
+      var hexColor = '#000000';
+      break;
+    case 'white':
+      var hexColor = '#ffffff';
+      break;
     default:
       return 'Não temos o equivalente hexadecimal para ' + nomeCor + '.'     
   }
+  return 'O hexadecimal para a cor ' + nomeCor + ' é ' + hexColor + '.';
 }
+
 
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-convertToHex('green');  // "O hexadecimal para a cor green é #00ff00."
-convertToHex('blue');   // "O hexadecimal para a cor blue é #0000ff."
-convertToHex('red');    // "O hexadecimal para a cor red é #ff0000."
-convertToHex('yellow'); // "O hexadecimal para a cor yellow é #00ff00."
-convertToHex('brown');  // "O hexadecimal para a cor brown é #5d3f0f."
+convertToHex('green');
+convertToHex('blue');
+convertToHex('red');
+convertToHex('black');
+convertToHex('white');
+convertToHex('yellow');
+convertToHex('brown');
