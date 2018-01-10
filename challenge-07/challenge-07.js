@@ -1,7 +1,7 @@
 /*
 Crie um array com 5 items (tipos variados).
 */
-var arr = [1, 'dois', false, function(){console.log('Im func!')}, {num: 5}]}];
+var arr = [1, 'dois', false, function(){console.log('Im func!')}, {num: 5}];
 
 /*
 Crie uma função chamada `addItem`, que irá adicionar itens no array criado.
@@ -16,7 +16,7 @@ function addItem(item) {
 Adicione um novo array ao array criado no início do desafio, com ao menos 3
 itens de tipos diferentes, mostrando o resultado no console.
 */
-addItem([true, 7, function(){}]);
+console.log( addItem([true, 7, function(){}]) );
 
 /*
 Mostre no console o segundo elemento desse último array, criado acima, com a
