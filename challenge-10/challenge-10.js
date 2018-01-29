@@ -100,7 +100,9 @@
   Essa função deverá retornar a frase:
   'Operação "[OPERATOR]" não permitida!'
   */
-  // ?
+  function showErrorMessage( operator ) {
+    return 'Operação ' + operator + ' não permitida!';
+  }
 
   /*
   Nossa calculadora está pronta! Agora vamos testá-la:
