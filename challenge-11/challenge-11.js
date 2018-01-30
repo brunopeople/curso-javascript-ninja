@@ -14,7 +14,6 @@
     console.log( 'Entrou ao menos uma vez!' );
   } while( once );
 
-
   /*
   Crie um objeto chamado `person`, que receba as seguintes propriedades:
   - 'name', 'age', 'weight' e 'birthday'. Preencha com os valores corretos
@@ -38,7 +37,7 @@
   */
   var counter = 0;
 
-  for( prop in person ) {
+  for( var prop in person ) {
     console.log( 'The ' + prop + ' of person is ' + person[prop] );
     counter++;
   }
@@ -53,14 +52,10 @@
   'The person has more than 25 years old? [TRUE/FALSE]'
   */
   function moreThan ( age ) {
-    if( person.age > age ) {
-      return true;
-    }
-
-    return false;
+    return person.age > age ? true : false;
   }
 
-  console.log( 'The person has more than 25 years old? ' + moreThan(25) );
+  console.log( 'The person has more than 25 years old? ', moreThan( 25 ) );
 
   /*
   Faça um loop de 0 a 20, que adicione cada número como um item de um
@@ -71,8 +66,13 @@
   
   var numbers = [];
   
-  for( var i = 0; i < 10; ++i ) {
-    numbers[i] = i;
+  for( var i = 0; i < 20; i++ ) {
+
+    if( i > 10 ) {
+      break;
+    }
+
+    numbers.push( i );
   }
 
   console.log( numbers );
@@ -84,14 +84,15 @@
   Mostrar no console os números do array.
   */
   console.log( 'Pares de 0 a 20:' );
-  var numbers = [];
+
+  numbers = [];
 
   for( var i = 0; i <= 20; i++ ) {
     if( i % 2 !== 0 ) {
       continue;
     }
 
-    numbers[i] = i;
+    numbers.push( i );
   }
 
   console.log( numbers );
