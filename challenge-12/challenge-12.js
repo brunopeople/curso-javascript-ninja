@@ -36,20 +36,9 @@
   `name`: String
   `pages`: Number
   */
-  books.push( { 
-    name: '1984',
-    pages: 450
-  } );
-
-  books.push( { 
-    name: 'Javascript Ninja',
-    pages: 600
-  } );
-
-  books.push( { 
-    name: 'Caixa de passaros',
-    pages: 300
-  } );
+  books.push( { name: '1984', pages: 450 } );
+  books.push( { name: 'Javascript Ninja', pages: 600 } );
+  books.push( { name: 'Caixa de passaros', pages: 300 } );
 
   console.log( '\nLista de livros:' );
 
@@ -62,8 +51,7 @@
   /*
   Remova o último livro, e mostre-o no console.
   */
-  var lastBook = books.pop();
-  console.log( lastBook );
+  console.log( books.pop() );
 
   console.log( '\nAgora sobraram somente os livros:' );
   /*
@@ -73,14 +61,14 @@
   /*
   Converta os objetos que ficaram em `books` para strings.
   */
-  var stringBooks = JSON.stringify( books );
+  books = JSON.stringify( books );
 
   console.log( '\nLivros em formato string:' );
 
   /*
   Mostre os livros nesse formato no console:
   */
-  console.log( stringBooks );
+  console.log( books );
 
   /*
   Converta os livros novamente para objeto.
@@ -93,7 +81,12 @@
   no formato abaixo:
       "[PROPRIEDADE]: [VALOR]"
   */
-  console.log( books );
+
+  for( var i = 0; i < books.length; i++ ) {
+    for( var prop in books[i] ) {
+      console.log( prop + ': ' + books[i][prop] )
+    }
+  }
 
   /*
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
@@ -112,7 +105,7 @@
   /*
   Ainda usando o objeto acima, mostre no console seu nome invertido.
   */
-  console.log( nameArr.reverse() );
+  console.log( nameArr.reverse().join( '' ) );
 
   console.log( '\nAgora em ordem alfabética:' );
   /*
