@@ -107,7 +107,10 @@
   var newBrasil = [];
 
   brasil.forEach( function( item, index ) {
-    newBrasil.push( { id: index, estado: item } );
+    newBrasil.push( { 
+      id: index, 
+      estado: item 
+    } );
   });
 
   /*
@@ -127,6 +130,11 @@
   var every = brasil.every( function( item ) {
       return item.length > 7;
   } );
+  console.log( 
+    every 
+    ? 'Sim, todos os estados tem mais de 7 letras!' 
+    : 'Nem todos os estados tem mais de 7 letras!' 
+  );
 
   /*
   Percorra o array `brasil` e verifique se o Ceará está incluído, atribuindo o
@@ -138,15 +146,14 @@
   */
   console.log( '\nCeará está incluído em `brasil`?' );
 
-  var exist = brasil.some( function( item ) {
+  var some = brasil.some( function( item ) {
     return item === 'Ceará';
   }); 
-
-  if( exist ) {
-    console.log( "Ceará está incluído!" );
-  } else {
-    console.log( "Ceará não foi incluído :(" );
-  }
+  console.log( 
+    some 
+    ? 'Ceará está incluído!' 
+    : 'Ceará não foi incluído :(' 
+  );
 
   /*
   Percorra o array `newBrasil` e crie um novo array que some 1 no ID de cada
@@ -155,8 +162,11 @@
   Atribua o novo array a uma variável chamada `map`.
   */
   var map = newBrasil.map( function( item, index ) {
-    return { ID: item.id + 1, estado: item.estado + ' pertence ao Brasil.' };
-  });
+      item.id++; 
+      item.estado += ' pertence ao Brasil.'
+
+      return item 
+    } );
   /*
   Mostre no console o array criado acima:
   */
@@ -167,8 +177,8 @@
   Filtre o array criado acima, retornando somente os estados que tiverem
   ID par. Atribua o valor à uma variável chamada `filter`.
   */
-  var filter = map.filter( function ( item, index, array ) {
-    return item.ID % 2 === 0;
+  var filter = map.filter( function ( item, index ) {
+    return item.id % 2 === 0;
   } );
 
   /*
