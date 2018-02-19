@@ -18,9 +18,8 @@
   console.log( 'As letras do seu nome:' );
   var name = 'Leandro';
 
-  for( var i = 0; i < name.length; i++ ) {
-    var pos = i + 1;
-    console.log( name.charAt( i ) + ' é a ' + pos + 'ª letra do meu nome.' );
+  for( var i = 0, len = name.length; i < len; i++ ) {
+    console.log( name.charAt(i) + ' é a ' + ( i + 1  ) + 'ª letra do meu nome.' );
   }
 
   /*
@@ -37,13 +36,11 @@
   */
   console.log( '\nNome convertido à partir de um slug:' );
   var fullname = 'leandro-manoel-da-silva';
-  var splitName = fullname.split('-');
-
-  var normalName = splitName.map( function( item ){
+  var newFullName = fullname.split('-').map( function( item ){
       return item.charAt(0).toUpperCase() + item.slice( 1 )
   }).join(' ');
 
-  console.log( normalName );
+  console.log( newFullName );
 
   /*
   - Crie um array com 5 nomes. Reduza esses nomes a uma única string, separando
@@ -55,21 +52,38 @@
   5 nomes foi somente uma sugestão ;)
   */
   console.log( '\nMeus amigos:' );
-  // ?
+  var friends = [ 'João', 'Maria', 'Roberto', 'Pedro', 'Marcos' ];
+  var counter = friends.length - 2;
+
+  // var phrase = friends.reduce( function( acc, curr, index ) {
+  //     return index > counter 
+  //     ? acc + ' e ' + curr 
+  //     : acc + ', ' + curr;
+  // }).concat( ' são meus amigos' );
+
+  // MODO DACIUK
+  var phrase = friends.reduce( function( acc, curr, index ) {
+      var separator = friends.length - 1 === index ? ' e ' : ' , ';
+      return acc + separator + curr;
+  }).concat( ' são meus amigos' );
+
+  console.log( phrase );
 
   /*
   Usando o replace(), faça a string "Roberto" virar "Roberta".
   Mostre o resultado no console.
   */
   console.log( '\nEra "Roberto", agora é:' );
-  // ?
+  console.log( 'Roberto'.replace( 'to', 'ta') );
+
+  
 
   /*
   Mostre no console a parte "nando" da string "Fernando". Use o método que
   faz a busca do final para o início da string.
   */
   console.log( '\nParte de uma string:' );
-  // ?
+  console.log( 'Fernando'.substring( 8, 3 ) );
 
   /*
   Declare uma variável chamada `myName`, que receba o seu primeiro nome,
@@ -81,5 +95,10 @@
   Ex.: Nomes que deveriam funcionar: "Fernando", "RoBertO", "gabriEla", etc.
   */
   console.log( '\nNome com letras intercaladas entre caixa alta e baixa:' );
-  // ?
+  var myName = 'Leandro';
+  var alterCaseName = myName.split('').reduce( function( acc, curr, index ) {
+    var alterLetter = index % 2 === 0 ? curr.toUpperCase() : curr.toLowerCase();
+    return acc + alterLetter;
+  });
+  console.log( alterCaseName );
 })();
