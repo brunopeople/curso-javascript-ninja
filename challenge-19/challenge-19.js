@@ -82,11 +82,22 @@
     - Lembrando que a função deve funcionar para qualquer marcação HTML e para
     qualquer classe que for testada. Os dados passados no exercício são somente
     para exemplificar.
+    regex = /<\w+\sclass=.'?(\w+\s?\w+)\\?.>/gm
     */
     var markup = '<main>\n  <div class="container">\n    <span class="text date"></span>\n    <p class=\'excerpt\'></p>\n  </div>\n</main>';
     console.log( '\nQuais classes CSS existem na marcação abaixo?\n\n', markup, '\n' );
     function hasClass( markup, cssClass ) {
-
+        var regex = new RegExp( '<\\w\+\\sclass=.\'\?(\\w+\\s\?\w+)\\?.>' );
+        console.log( regex );
+        console.log( markup.match( regex ) );
+        // if( markup.match( regex ) === cssClass ) {
+        //     return true;
+        // }
+        // return false;
     }
+    var cssClasses = [ 'container', 'text', 'date', 'excerpt', 'main' ]
+    cssClasses.forEach( function( cssClass ) {
+        console.log( hasClass( cssClass ) + ' para a classe ' + cssClass );
+    } );
 
 } )();
