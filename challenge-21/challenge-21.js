@@ -1,5 +1,5 @@
 ( function( win, doc ) {
-  'use strict';
+    'use strict';
     /*
     O desafio de hoje será um pequeno projeto: um cronômetro!
     As regras para criação do cronômetro são as seguintes:
@@ -16,26 +16,27 @@
     usar o nome que achar melhor, desde que ele seja semântico, ou seja, o nome
     dado ao elemento HTML deve definir o que o elemento é ou o que ele faz.
     */
-    var counter = 0;
-    var display = doc.querySelector( '[data-js="display"]' );
-    var startButton = doc.querySelector( '[data-js="startButton"]' );
-    var stopButton = doc.querySelector( '[data-js="stopButton"]' );
-    var resetButton = doc.querySelector( '[data-js="resetButton"]' );
-    var cronometerId;
-    function cronometer() {
-        display.value = counter++;
-        cronometerId = setTimeout( cronometer, 1000 );
+    var interval;
+    var $display = doc.querySelector( '[data-js="display"]' );
+    var $startButton = doc.querySelector( '[data-js="startButton"]' );
+    var $stopButton = doc.querySelector( '[data-js="stopButton"]' );
+    var $resetButton = doc.querySelector( '[data-js="resetButton"]' );
+     
+    $startButton.addEventListener( 'click', startCronometer, false );
+    $stopButton.addEventListener( 'click', stopCronometer, false );
+    $resetButton.addEventListener( 'click', resetCronometer, false );
+
+    function startCronometer(){
+        $display.value = +$display.value + 1;
+        interval = setTimeout( startCronometer, 1000 );
     }
-    startButton.addEventListener( 'click', function(event){
-        event.preventDefault();
-        cronometer();
-    }, false );
-    stopButton.addEventListener( 'click', function() {
-        clearTimeout( cronometerId );
-    }, false );
-    resetButton.addEventListener( 'click', function() {
-        clearTimeout( cronometerId );
-        counter = 0;
-        display.value = 0;
-    }, false );
+
+    function stopCronometer() {
+        clearTimeout( interval );
+    }
+    
+    function resetCronometer() {
+        $display.value = 0;
+        stopCronometer();
+    }
 })( window, document );
