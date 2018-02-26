@@ -1,5 +1,5 @@
 ( function( win, doc ) {
-  'use strict'
+  'use strict';
     /*
     O desafio de hoje será um pequeno projeto: um cronômetro!
     As regras para criação do cronômetro são as seguintes:
