@@ -1,0 +1,75 @@
+@import url(https://fonts.googleapis.com/css?family=Abel);
+body {
+    font-family: 'Abel', sans-serif;
+    font-size: 1.5em;
+}
+
+.calculator {
+    box-sizing: border-box;
+    left: 50%;
+    margin-left: -188px;
+    min-height: 350px;
+    position: absolute;
+    width: 376px;
+}
+
+.calculator__display {
+    background-color: #14171a;
+    border: 0;
+    border-bottom: 1px solid #404a53;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    flex-grow: 2;
+    font-size: 1.9rem;    
+    height: 115px;
+    padding: 0 35px 0 0;
+    text-align: right;
+    width: 100%;
+}
+
+.keyboard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.keyboard
+.keyboard__buttons {
+    align-items: center;
+    background-color: #34363a;
+    border: 0;
+    cursor: pointer;
+    color: #bec3ce;
+    display: flex;
+    font-size: 1.5rem;    
+    height: 94px;
+    justify-content: center;
+    max-width: 94px;
+    outline: none;
+    width: 100%;
+}
+
+.keyboard
+.keyboard__buttons:hover {
+    background-color: #585b62;
+}
+
+.keyboard
+.keyboard__buttons--operators {
+    background-color: #272a2d;
+}
+
+.keyboard
+.keyboard__buttons--operators:hover {
+    background-color: #4f6474;
+}
+
+.keyboard
+.keyboard__buttons--return {
+    background-color: #43ab53;
+}
+
+.keyboard
+.keyboard__buttons--return:hover {
+    background-color: #2e863b;
+}
