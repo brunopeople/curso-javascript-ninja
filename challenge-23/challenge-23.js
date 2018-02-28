@@ -29,8 +29,6 @@
   var $buttons = doc.querySelectorAll( '[data-js="btn-numbers"]' );
   var $operators = doc.querySelectorAll( '[data-js="btn-operators"]' );
 
-  // console.log( $display, $buttons , $operators );
-
   Array.prototype.forEach.call( $buttons, function( $item, index ) {
      $item.addEventListener( 'click', handleClickNumber, false ); 
   } );
@@ -38,5 +36,6 @@
   function handleClickNumber(){
     $display.value += this.value;
   }
+  // teste de commit
 
 } )( window, document );
