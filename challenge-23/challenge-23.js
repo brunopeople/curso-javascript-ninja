@@ -57,17 +57,18 @@
       $display.value = expression.reduce( function( acc, curr){
         var firstValue = acc.slice(0, -1);
         var operator = acc.split('').pop();
-        var lastValue = curr;
+        var lastValue = removeLastItemIfItIsAnOperator( curr );
+        var lastOperator = isLastItemAnOperation( curr ) ? curr.split('').pop() : '';
 
         switch( operator ) {
           case '+':
-            return Number(firstValue) + Number(lastValue);
+            return ( Number(firstValue) + Number(lastValue) ) + lastOperator;
           case '-':
-            return Number(firstValue) - Number(lastValue);
+            return ( Number(firstValue) - Number(lastValue) ) + lastOperator;
           case 'x':
-            return Number(firstValue) * Number(lastValue);
+            return ( Number(firstValue) * Number(lastValue) ) + lastOperator;
           case '÷':
-            return Number(firstValue) / Number(lastValue);
+            return ( Number(firstValue) / Number(lastValue) ) + lastOperator;
         }
       });
     }
