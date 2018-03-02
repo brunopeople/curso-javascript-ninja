@@ -59,7 +59,7 @@
 
     function handleClickEqual() {
       $display.value = removeLastItemIfItIsAnOperator( $display.value );
-      var allValues = $display.value.match(/\d+[+x÷-]?/g);
+      var allValues = $display.value.match( getRegexOperations() );
       $display.value = allValues.reduce( calculateAllValues );
     }
 
@@ -94,7 +94,13 @@
     }
 
     function getOperations() {
-      return [ '+', '-', 'x', '÷' ];
+      return Array.prototype.map.call( $buttonsOperations, function( button ) {
+        return button.value;
+      } );
+    }
+
+    function getRegexOperations() {
+      return new RegExp( '\\d+[' + getOperations().join('') + ']?','g' );
     }
 
     function removeLastItemIfItIsAnOperator( string ) {
